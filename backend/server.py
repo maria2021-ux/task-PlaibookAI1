@@ -7,8 +7,16 @@ from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import asyncio  # To slow down frame rate
+from fastapi import FastAPI
 
 app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, world!"}
+@app.get("/favicon.ico")
+def favicon():
+    return {}
 
 # Allow frontend connections
 app.add_middleware(
@@ -26,7 +34,7 @@ def generate_random_shape(num_points, width=640, height=480):
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     
-    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # Use DirectShow for better compatibility
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
     frame_num = 0
