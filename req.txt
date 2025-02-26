@@ -1,0 +1,37 @@
+Hi Maria,
+I hope you're doing well. Congratulations on passing the first interview with Plaibook-AI! I'm excited to share the next phase of the interview process with you.
+
+Task deadline: 26/02/2025
+Real-Time Video Processing Task
+
+Objective:
+
+Build a web application that:
+Captures a live camera feed.
+Sends each frame to the backend for processing.
+In the backend:
+Generate a random four-point shape, overlay it on the frame in red with low opacity.
+Send the processed frame back to the frontend along with a second set of five random points.
+In the frontend:
+Draw the second shape using the received points in blue with low opacity.
+In summary, you'll draw two shapes per frame—one in the backend and one in the frontend.
+By "low opacity," we mean that when you draw the shape, the original frame should still be visible.
+
+For example :
+In the backend generate these two lists [[(3,5),(4,18),(20,6),(16,40)], [(5,5),(46,16),(7,18),(45,13),(4,48)]]. The first set is drawn in the backend while the second set is sent to the frontend and drawn there.
+I have attached an example of the expected output, In the attached image: Let's say that here the red one is drawn with the backend, and the blue one is drawn with the frontend.
+
+Final UI Layout:
+Your frontend should display two video feeds side by side:
+Left Video: The raw live feed from the camera.
+Right Video: The processed feed with the two shapes overlayed (one from the backend and one from the frontend).
+Display the frame number in the two videos to show the difference between the two feeds.
+Additional Notes:
+UI design and styling are not evaluated in this task, but it should be acceptable.
+You’re free to use any backend you’re comfortable with (preferred Python).
+The focus is on real-time video processing and WebSocket communication or the best approach you can think of according to your experience and the recommended best practices in this use case.
+Don't forget to handle multiple users at the same time (As a bonus point).
+
+Deliverables:
+- Github repository with code and readme file.
+- Running demo showing the task which we can try easily.
